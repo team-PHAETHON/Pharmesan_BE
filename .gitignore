@@ -1,0 +1,39 @@
+### Build ###
+/build/
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### Output ###
+**/out/
+*.class
+
+### Logs ###
+*.log
+logs/
+
+### Temp & Backup Files ###
+*.swp
+*.swo
+*.bak
+*~
+
+### OS Files ###
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+### Environment Files ###
+.env
+application-*.yml
+application-*.properties
