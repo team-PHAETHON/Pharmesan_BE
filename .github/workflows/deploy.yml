@@ -2,7 +2,8 @@ name: Deploy to cloudtype
 on:
   push:
     branches:
-      - feature/drug-search
+      - develop
+      - feature/*
 jobs:
   deploy:
     runs-on: ubuntu-latest
