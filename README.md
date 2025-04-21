@@ -5,7 +5,7 @@ Quasi-drug Search Service with Spring Boot
 - **IDE** : IntelliJ IDEA Community Edition 2024.3.5
 - **Gradle JVM** : corretto-17 (Amazon Corretto 17.0.14)
 - **Spring Boot** : Spring Boot 3.2.9 (Gradle)
-
+- **Deploy** : CloudType Free Tier
 
 ### How to Install
 
