@@ -35,5 +35,3 @@ Desktop.ini
 
 ### Environment Files ###
 .env
-application-*.yml
-application-*.properties
