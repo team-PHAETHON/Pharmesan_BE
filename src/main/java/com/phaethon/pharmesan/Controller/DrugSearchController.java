@@ -16,7 +16,7 @@ public class DrugSearchController {
     @Autowired
     private DrugSearchService drugSearchService;
 
-    @GetMapping("/add")
+    @PostMapping("/add")
     public Drug add(@RequestBody Drug drug) {
         return drugSearchService.addDrug(drug);
     }
