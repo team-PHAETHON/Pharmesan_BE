@@ -4,6 +4,7 @@ import com.phaethon.pharmesan.Entity.Drug;
 
 import java.util.List;
 
-public interface DrugRepositoryInterface {
+public interface DrugRepository {
     List<Drug> findByItemNameContaining(String itemName);
+    Drug save(Drug drug);
 }

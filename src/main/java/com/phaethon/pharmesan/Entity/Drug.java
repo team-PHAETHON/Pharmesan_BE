@@ -6,10 +6,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter // Lombok : Getter, Setter 자동 생성
 @Setter
 @Entity                         // 이 클래스가 JPA 엔티티임.
+@Document(collection = "search")
 @Table(name = "drug_details")   // 이 클래스가 'drug_details' 테이블에 매핑됨
 public class Drug {
     @Id

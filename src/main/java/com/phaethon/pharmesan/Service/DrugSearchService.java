@@ -1,9 +1,10 @@
 package com.phaethon.pharmesan.Service;
 
 import com.phaethon.pharmesan.Entity.Drug;
-import com.phaethon.pharmesan.Repository.SQLite.SQLiteDrugRepository;
+import com.phaethon.pharmesan.Repository.DrugRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
@@ -11,10 +12,13 @@ import java.util.List;
 
 @Service // 이 클래스가 서비스 클래스임.
 @Transactional // 이 클래스 내의 모든 메소드가 트랜잭션 관리 대상임.
-public class DrugSearchService { 
+public class DrugSearchService {
 
-    @Autowired // SQLiteDrugRepository 의존성 주입
-    private SQLiteDrugRepository sqLiteDrugRepository;
+    private final DrugRepository drugRepository;
+
+    public DrugSearchService(DrugRepository drugRepository) {
+        this.drugRepository = drugRepository;
+    }
 
     // TODO : 의약외품 검색 기능 관련 메소드에 대한 로그 기록 기능 추가 필요
 
@@ -23,9 +27,12 @@ public class DrugSearchService {
      *   Description : 새로운 약품 정보를 데이터베이스에 저장하는 메소드
      *   Parameter   : - Drug drug          저장할 약품 정보
      *   Return      : - Drug               저장한 약품 정보를 반환
+     *
+     *   Profile("dev") : SQLite 환경에서만 실행됨.
      */
+    @Profile("dev")
     public Drug addDrug(Drug drug) {
-        return sqLiteDrugRepository.save(drug);
+        return drugRepository.save(drug);
     }
 
     /**
@@ -35,6 +42,6 @@ public class DrugSearchService {
      *   Return      : List<Drug>           제품명을 포함한 약품 리스트
      */
     public List<Drug> getDrugsByItemName(String itemName) {
-        return sqLiteDrugRepository.findByItemNameContaining(itemName);
+        return drugRepository.findByItemNameContaining(itemName);
     }
 }

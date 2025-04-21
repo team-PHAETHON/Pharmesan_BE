@@ -1,15 +1,15 @@
-package com.phaethon.pharmesan.Repository.SQLite;
+package com.phaethon.pharmesan.Repository.MongoDB;
 
 import com.phaethon.pharmesan.Entity.Drug;
 import org.springframework.context.annotation.Profile;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
 
-// DrugRepository - SQLite (dev)
+// DrugRepository - MongoDB (prod)
 
-@Profile("dev")
-public interface SQLiteDrugRepositoryInterface extends JpaRepository<Drug, Long> {
+@Profile("prod")
+public interface MongoDBDrugRepositoryInterface extends MongoRepository<Drug, String> {
 
     /**
      * List<Drug> findByItemNameContaining(String)

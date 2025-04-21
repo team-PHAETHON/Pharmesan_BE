@@ -1,8 +1,7 @@
-package com.phaethon.pharmesan.Repository;
+package com.phaethon.pharmesan.Repository.SQLite;
 
 import com.phaethon.pharmesan.Entity.Drug;
-import com.phaethon.pharmesan.Repository.SQLite.SQLiteDrugRepositoryInterface;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.phaethon.pharmesan.Repository.DrugRepository;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
@@ -10,7 +9,7 @@ import java.util.List;
 
 @Repository
 @Profile("dev")
-public class SQLiteDrugRepository implements DrugRepositoryInterface {
+public class SQLiteDrugRepository implements DrugRepository {
 
     private final SQLiteDrugRepositoryInterface sqLiteDrugRepositoryInterface;
 
@@ -21,5 +20,9 @@ public class SQLiteDrugRepository implements DrugRepositoryInterface {
     @Override
     public List<Drug> findByItemNameContaining(String itemName) {
         return sqLiteDrugRepositoryInterface.findByItemNameContaining(itemName);
+    }
+
+    public Drug save(Drug drug) {
+        return sqLiteDrugRepositoryInterface.save(drug);
     }
 }
