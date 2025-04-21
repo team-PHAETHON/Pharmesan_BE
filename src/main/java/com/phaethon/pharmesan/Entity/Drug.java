@@ -19,7 +19,7 @@ public class Drug {
     @Column(name = "ITEM_SEQ")
     private String itemSeqI; // 품목일련번호 - FK(Identification)
 
-    @Column(name = "itemSeq")
+    @Column(name = "itemSeqE")
     private String itemSeqE; // 품목기준코드 - FK(easyInfo)
 
     @Column(name = "enterprise_name")
