@@ -30,6 +30,9 @@ dependencies {
 	implementation 'org.hibernate.orm:hibernate-community-dialects:6.4.2.Final'		// Hibernate Community Dialects
 	runtimeOnly 'org.xerial:sqlite-jdbc:3.45.1.0'									// SQLite JDBC 드라이버를 런타임에만 포함
 
+	// MongoDB 의존성
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
 	// Lombok 의존성 (코드 자동 생성, getter/setter 등)
 	compileOnly("org.projectlombok:lombok:1.18.30")			// 컴파일 시 Lombok 사용 (실행 시에는 필요 없음)
 	annotationProcessor("org.projectlombok:lombok:1.18.30") // Lombok 애너테이션 프로세서 활성화
