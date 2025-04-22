@@ -11,7 +11,10 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class Drug {
 
     @Id
-    private String itemNo; // 품목기준코드 - FK(easyInfo)
+    private String id; // 도큐먼트 아이디
+
+    @Field("item_no")
+    private String itemNo; // 품목기준코드 (FK)
 
     @Field("enterprise_name")
     private String enterpriseName; // 업체명
