@@ -14,17 +14,6 @@ public class DrugSearchController {
 
     @Autowired // DrugSearchService 의존성 주입
     private DrugSearchService drugSearchService;
-    
-    /**
-     * public Drug add(@RequestBody Drug)
-     *   Description : 의약외품 정보를 추가하고, 추가한 정보를 반환
-     *   Parameter   : - @RequestBody Drug drug     저장할 약품 정보 (JSON Body)
-     *   Return      : - Drug                       저장한 약품 정보를 반환
-     */
-    @PostMapping("/add") // [POST] /drug_search/add
-    public Drug add(@RequestBody Drug drug) { 
-        return drugSearchService.addDrug(drug);
-    }
 
     /**
      * public List<Drug> search(@RequestParam)
