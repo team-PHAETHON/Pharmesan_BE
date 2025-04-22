@@ -1,15 +1,10 @@
-package com.phaethon.pharmesan.Repository.SQLite;
+package com.phaethon.pharmesan.Repository;
 
 import com.phaethon.pharmesan.Entity.Drug;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
+import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.List;
 
-// DrugRepository - SQLite (dev)
-
-@Repository // 이 인터페이스가 리포지토리임.
-public interface SQLiteDrugRepository extends JpaRepository<Drug, Long> {
+public interface DrugRepository extends MongoRepository<Drug, String> {
 
     /**
      * List<Drug> findByItemNameContaining(String)

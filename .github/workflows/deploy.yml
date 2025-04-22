@@ -19,7 +19,7 @@ jobs:
         uses: cloudtype-github-actions/deploy@v1
         with:
           token: ${{ secrets.CLOUDTYPE_TOKEN }}
-          project: rejo/pharmesan-be
+          project: rejo/rejo
           stage: main
           yaml: |
             name: pharmesan-be
@@ -28,7 +28,11 @@ jobs:
               ports: "8080"
               start: java -jar build/libs/*.jar
               build: ./gradlew build
-              env: []
+              env:
+                - name: DB_URL
+                  secret: DB_URL
+                - name: DB_NAME
+                  secret: DB_NAME
               buildenv: []
             context:
               git:

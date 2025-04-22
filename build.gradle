@@ -22,13 +22,10 @@ dependencies {
 	// Spring Boot의 기본 스타터 의존성
 	implementation 'org.springframework.boot:spring-boot-starter'			// Spring Boot 기본 스타터
 	implementation 'org.springframework.boot:spring-boot-starter-web'		// 웹 개발 스타터
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'	// JPA 스타터
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'	// Spring Boot 테스트 스타터
 
-	// SQLite 의존성
-	implementation 'org.xerial:sqlite-jdbc:3.45.1.0'								// SQLite JDBC 드라이버
-	implementation 'org.hibernate.orm:hibernate-community-dialects:6.4.2.Final'		// Hibernate Community Dialects
-	runtimeOnly 'org.xerial:sqlite-jdbc:3.45.1.0'									// SQLite JDBC 드라이버를 런타임에만 포함
+	// MongoDB 의존성
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 
 	// Lombok 의존성 (코드 자동 생성, getter/setter 등)
 	compileOnly("org.projectlombok:lombok:1.18.30")			// 컴파일 시 Lombok 사용 (실행 시에는 필요 없음)
